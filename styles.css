@@ -45,6 +45,12 @@ nav {
     position: relative;
     z-index: 10; /* Clickable hai ki nahi */
 }
+.nav-links a:hover{
+    color: #151414;
+    transition: 0.4s ease-in-out;
+
+}
+
 
 /* Header */
 .header {
