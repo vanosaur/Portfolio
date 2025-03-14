@@ -1,4 +1,4 @@
-const professions = ["Python programmer.", "Web developer.", "Software Engineer."];
+const professions = ["Python programming.", "Web development.", "AI."];
 let i = 0; // Word index
 let j = 0; // Letter index
 let isDeleting = false;

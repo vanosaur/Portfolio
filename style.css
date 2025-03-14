@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 html {
     scroll-behavior: smooth;
 }
@@ -42,7 +44,7 @@ nav {
     text-decoration: none;
     color: #dfdcdc;
     margin: 0 15px;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 500;
     position: relative;
     z-index: 10; /* Clickable hai ki nahi */
@@ -101,6 +103,7 @@ nav {
     height: 220px;
     object-fit: cover; /* Prevents stretching */
     border-radius: 50%;
+    box-shadow: 0 5px 28px rgb(170, 191, 201);
 
 }
 .social-icons {
@@ -119,7 +122,12 @@ nav {
     z-index: 1;
 }
 .social-icons i {
-    font-size: 20px;  
+    font-size: 25px;  
+    transition: 0.5s ease-in-out;
+}
+.social-icons i:hover{
+    transition: 0.2s ease-in-out;
+    transform: scale(1.4);
 }
 
 
@@ -130,8 +138,18 @@ nav {
     padding-left: 30px; 
     
 }
+.right h1{
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
+    font-size:40px;
+}
+.right p{
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 18px;
+}
 #typing-text{
     font-weight: bold;
+    font-family: 'Chakra Petch', sans-serif;
 }
 
 
@@ -157,6 +175,7 @@ nav {
             -2px 2px 0 white, 
             2px 2px 0 white;
     }
+
 
     .project-container {
         display: flex;
@@ -255,13 +274,13 @@ nav {
 .contact-links a {
     text-decoration: none;
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     transition: 0.3s ease-in-out;
 }
 
 .contact-links a:hover {
-    color: #ffcc00;
+    color: #fae900;
 }
 
 .credits {
@@ -270,7 +289,7 @@ nav {
 }
 
 .highlight {
-    color:#ffcc00;
+    color:#fae900;
     font-family: 'Pacifico', cursive;
 }
 
