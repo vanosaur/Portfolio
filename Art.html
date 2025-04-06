@@ -24,6 +24,7 @@
             font-family: 'Pacifico', cursive;
             color: white;
         }
+        
 
 
 /* Navbar */
@@ -100,6 +101,24 @@ nav {
             box-shadow: 0 5px 35px rgb(134, 136, 137);
         }
 
+        .transition{
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform:translateY(30px);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        
+
     </style>
      <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
@@ -114,23 +133,25 @@ nav {
 
         </div>
     </nav>
-    <div class="content">
-        <h1>✎  Sketch Space</h1>
-        <p>A pencil, a blank page, and an idea—this is where it all begins.<br>
-            Here’s a collection of my work, where ideas take shape in pencil .</p>
-    </div>
+    <div class="transition">
+        <div class="content">
+            <h1>✎  Sketch Space</h1>
+            <p>A pencil, a blank page, and an idea—this is where it all begins.<br>
+                Here’s a collection of my work, where ideas take shape in pencil .</p>
+        </div>
 
-    <div class="gallery">
-        <img src="sketches/sketch1.jpeg" alt="Sketch 1">
-        <img src="sketches/sketch4.jpeg" alt="Sketch 2">
-        <img src="sketches/sketch9.jpeg" alt="Sketch 3">
-        <img src="sketches/sketch7.jpeg" alt="Sketch 4">
-        <img src="sketches/sketch5.png" alt="Sketch 5">
-        <img src="sketches/sketch3.jpeg" alt="Sketch 6">
-        <img src="sketches/sketch2.jpeg" alt="Sketch 7">
-        <img src="sketches/sketch6.jpeg" alt="Sketch 8">
-        <img src="sketches/sketch8.jpeg" alt="Sketch 9">
+        <div class="gallery">
+            <img src="sketches/sketch1.jpeg" alt="Sketch 1">
+            <img src="sketches/sketch4.jpeg" alt="Sketch 2">
+            <img src="sketches/sketch9.jpeg" alt="Sketch 3">
+            <img src="sketches/sketch7.jpeg" alt="Sketch 4">
+            <img src="sketches/sketch5.png" alt="Sketch 5">
+            <img src="sketches/sketch3.jpeg" alt="Sketch 6">
+            <img src="sketches/sketch2.jpeg" alt="Sketch 7">
+            <img src="sketches/sketch6.jpeg" alt="Sketch 8">
+            <img src="sketches/sketch8.jpeg" alt="Sketch 9">
 
+        </div>
     </div>
 
 </body>

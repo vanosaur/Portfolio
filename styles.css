@@ -210,3 +210,17 @@ nav {
     color: #9d9b9b;
     margin-top: 5px;
 }
+.transition{
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
