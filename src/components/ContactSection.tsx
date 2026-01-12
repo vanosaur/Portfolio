@@ -27,7 +27,7 @@ export default function ContactSection() {
                     className="space-y-8 text-center md:text-left"
                 >
                     <div>
-                        <h2 className="text-5xl md:text-7xl font-bold font-poppins mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+                        <h2 className="text-5xl md:text-7xl font-bold font-poppins mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 leading-tight">
                             Let's Talk.
                         </h2>
                         <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed">

@@ -28,16 +28,16 @@ export default function AboutSection() {
                     alt="Profile Picture"
                     width={280}
                     height={280}
-                    className="w-[280px] h-[280px] object-cover rounded-full shadow-[0_5px_35px_rgb(134,136,137)]"
+                    className="w-[220px] h-[220px] md:w-[280px] md:h-[280px] object-cover rounded-full shadow-[0_5px_35px_rgb(134,136,137)]"
                 />
             </section>
 
             {/* About Section */}
-            <section className="max-w-[800px] mx-auto my-[30px] text-[1.1rem] leading-[1.6] p-[20px] text-center font-montserrat">
+            <section className="max-w-[800px] mx-auto my-[30px] text-[1.1rem] leading-[1.6] px-6 text-center font-montserrat">
                 <p>
-                    Hi👋 &nbsp; I'm <span className="font-bold italic">Vani Rudra</span>, an aspiring software developer with a passion <br /> for
-                    web development, Progamming, and problem-solving. I enjoy creating intuitive <br /> and visually appealing
-                    digital experiences while continuously expanding my skill set.<br /><br /> Currently, I'm exploring various technologies
+                    Hi👋 &nbsp; I'm <span className="font-bold italic">Vani Rudra</span>, an aspiring software developer with a passion for
+                    web development, Progamming, and problem-solving. I enjoy creating intuitive and visually appealing
+                    digital experiences while continuously expanding my skill set. Currently, I'm exploring various technologies
                     and working on projects that enhance both my technical and creative abilities. Let's innovate and build
                     something amazing together!
                 </p>
@@ -46,40 +46,39 @@ export default function AboutSection() {
             <div className="w-[60%] h-[1px] bg-[#dad7d7] mx-auto my-[30px]"></div>
 
             {/* Skills Section */}
-            <section className="max-w-[900px] mx-auto my-[50px] flex justify-start text-left gap-[100px] sm:gap-[200px] flex-col sm:flex-row px-4">
-                <h2 className="text-[1.2rem] font-bold uppercase w-[150px] shrink-0">Skills</h2>
-                <div className="flex-2">
-                    <div className="mb-[20px]">
-                        <h3 className="text-[1rem] font-bold mb-[5px]">Web Development</h3>
-                        <p className="text-[0.9rem] text-[#bbb] m-0">HTML, CSS, React.js , Javascript, Next.js, Tailwind</p>
+            <section className="max-w-[900px] mx-auto my-[50px] flex flex-col md:flex-row justify-start text-left gap-8 md:gap-[150px] px-6">
+                <h2 className="text-[1.2rem] font-bold uppercase w-[150px] shrink-0 text-white/50">Skills</h2>
+                <div className="flex-1 space-y-8">
+                    <div>
+                        <h3 className="text-[1.1rem] font-bold mb-2">Web Development</h3>
+                        <p className="text-[0.95rem] text-gray-400">HTML, CSS, React.js , Javascript, Next.js, Tailwind</p>
                     </div>
-                    <div className="mb-[20px]">
-                        <h3 className="text-[1rem] font-bold mb-[5px]">Programming</h3>
-                        <p className="text-[0.9rem] text-[#bbb] m-0">Python, Java</p>
+                    <div>
+                        <h3 className="text-[1.1rem] font-bold mb-2">Programming</h3>
+                        <p className="text-[0.95rem] text-gray-400">Python, Java</p>
                     </div>
-                    <div className="mb-[20px]">
-                        <h3 className="text-[1rem] font-bold mb-[5px]">Creative Skills</h3>
-                        <p className="text-[0.9rem] text-[#bbb] m-0">Sketching, Painting</p>
+                    <div>
+                        <h3 className="text-[1.1rem] font-bold mb-2">Creative Skills</h3>
+                        <p className="text-[0.95rem] text-gray-400">Sketching, Painting</p>
                     </div>
                 </div>
             </section>
 
             {/* Education Section */}
-            <section className="max-w-[900px] mx-auto my-[50px] flex justify-start text-left gap-[100px] sm:gap-[200px] flex-col sm:flex-row px-4">
-                <h2 className="text-[1.2rem] font-bold uppercase w-[150px] shrink-0">Education</h2>
-                <div className="flex-2">
-                    <div className="mb-[20px]">
-                        <h3 className="text-[1rem] font-bold mb-[5px]">Newton School of Technology, Sonipat</h3>
-                        <p className="text-[0.9rem] text-[#bbb] m-0">B.Tech in CSE & AI</p>
-                        <p className="text-[0.9rem] text-[#bbb] m-0">Class of 2028</p>
+            <section className="max-w-[900px] mx-auto my-[50px] flex flex-col md:flex-row justify-start text-left gap-8 md:gap-[150px] px-6">
+                <h2 className="text-[1.2rem] font-bold uppercase w-[150px] shrink-0 text-white/50">Education</h2>
+                <div className="flex-1 space-y-8">
+                    <div>
+                        <h3 className="text-[1.1rem] font-bold mb-1">Newton School of Technology, Sonipat</h3>
+                        <p className="text-[0.95rem] text-gray-400">B.Tech in CSE & AI • Class of 2028</p>
                     </div>
-                    <div className="mb-[20px]">
-                        <h3 className="text-[1rem] font-bold mb-[5px]">APK Jr. College</h3>
-                        <p className="text-[0.9rem] text-[#bbb] m-0">2022-2024</p>
+                    <div>
+                        <h3 className="text-[1.1rem] font-bold mb-1">APK Jr. College</h3>
+                        <p className="text-[0.95rem] text-gray-400">Higher Secondary Education • 2022-2024</p>
                     </div>
-                    <div className="mb-[20px]">
-                        <h3 className="text-[1rem] font-bold mb-[5px]">Jayawant Public School</h3>
-                        <p className="text-[0.9rem] text-[#bbb] m-0">2019-2022</p>
+                    <div>
+                        <h3 className="text-[1.1rem] font-bold mb-1">Jayawant Public School</h3>
+                        <p className="text-[0.95rem] text-gray-400">Secondary Education • 2019-2022</p>
                     </div>
                 </div>
             </section>

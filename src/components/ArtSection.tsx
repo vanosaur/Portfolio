@@ -45,13 +45,13 @@ export default function ArtSection() {
     return (
         <div className="w-full relative z-10 py-20 min-h-screen bg-black" id="art">
             {/* Content Header */}
-            <div className="pt-[100px] px-10 sm:px-20 pb-[40px] text-center sm:text-left">
+            <div className="pt-[100px] px-6 sm:px-20 pb-[40px] text-center sm:text-left">
                 <motion.h1
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    className="font-poppins text-[4rem] sm:text-[6rem] font-black text-transparent [-webkit-text-stroke:2px_white] tracking-tighter"
+                    className="font-poppins text-[3.5rem] md:text-[6rem] font-black text-transparent [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:2px_white] tracking-tighter"
                 >
                     Sketch Space
                 </motion.h1>
@@ -60,10 +60,9 @@ export default function ArtSection() {
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="font-montserrat mt-4 text-gray-300 text-lg max-w-2xl"
+                    className="font-montserrat mt-4 text-gray-300 text-base md:text-lg max-w-2xl"
                 >
                     A pencil, a blank page, and an idea—this is where it all begins.
-                    <br />
                     Raw, unfiltered, and straight from the imagination.
                 </motion.p>
             </div>
@@ -74,7 +73,7 @@ export default function ArtSection() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-100px" }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-20 max-w-[1600px] mx-auto"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-6 sm:px-20 max-w-[1600px] mx-auto"
             >
                 {sketches.map((sketch, index) => (
                     <motion.div
@@ -123,7 +122,7 @@ export default function ArtSection() {
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.8, opacity: 0 }}
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                            className="relative w-auto h-auto max-w-full max-h-[90vh]"
+                            className="relative w-full max-w-4xl max-h-[85vh] flex items-center justify-center p-2"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <Image
@@ -131,7 +130,7 @@ export default function ArtSection() {
                                 alt="Selected Sketch"
                                 width={800}
                                 height={1000}
-                                className="object-contain max-h-[90vh] w-auto rounded-lg shadow-[0_0_50px_rgba(255,255,255,0.1)]"
+                                className="object-contain max-h-[85vh] w-auto rounded-lg shadow-2xl"
                             />
                         </motion.div>
                     </motion.div>

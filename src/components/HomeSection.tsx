@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Linkedin, Mail, Github } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { clsx } from "clsx";
 
 const projects = [
     {
@@ -91,33 +92,34 @@ export default function HomeSection() {
             </div>
 
             {/* Home Hero Content */}
-            <div className="relative h-screen flex items-center justify-center text-left text-white overflow-hidden z-10">
-                <div className="flex items-center justify-center z-10 w-full content">
-                    <div className="flex-1 flex justify-end items-center pr-[30px] left">
+            <div className="relative min-h-screen flex items-center justify-center text-white overflow-hidden z-10 px-6 py-20">
+                <div className="flex flex-col md:flex-row items-center justify-center z-10 w-full max-w-6xl mx-auto gap-10 md:gap-0">
+                    <div className="flex-1 flex justify-center md:justify-end items-center md:pr-[30px]">
                         <Image
                             src="/PHOTOS/about-me.jpg"
                             alt="Profile Picture"
                             width={220}
                             height={220}
-                            className="w-[220px] h-[220px] object-cover rounded-full shadow-[0_0_80px_rgba(255,255,255,0.5)] profile-pic"
+                            className="w-[180px] h-[180px] md:w-[220px] md:h-[220px] object-cover rounded-full shadow-[0_0_80px_rgba(255,255,255,0.5)] profile-pic"
                         />
                     </div>
-                    <div className="flex-[1.5] pl-[30px] right">
-                        <h1 className="font-shadows font-bold text-[40px]">Vani Rudra</h1>
-                        <br />
-                        <p className="font-montserrat text-[18px]">
-                            Born and raised in Pune, Maharashtra. I'm <br /> currently pursuing my B.Tech in Computer Science,<br /> honing my skills in <span className="font-bold font-montserrat" id="typing-text">{typingText}|</span>
+                    <div className="flex-[1.5] text-center md:text-left md:pl-[30px]">
+                        <h1 className="font-shadows font-bold text-[36px] md:text-[40px]">Vani Rudra</h1>
+                        <p className="font-montserrat text-[16px] md:text-[18px] mt-4 max-w-lg mx-auto md:mx-0">
+                            Born and raised in Pune, Maharashtra. I'm currently pursuing my B.Tech in Computer Science, honing my skills in <span className="font-bold font-montserrat" id="typing-text">{typingText}|</span>
                         </p>
                     </div>
                 </div>
-                <div className="absolute right-[40px] top-[45%] flex flex-col gap-[20px] social-icons">
-                    <a href="https://www.linkedin.com/in/vani-rudra-/" target="_blank" className="text-white z-10 hover:scale-140 transition-transform duration-200 ease-in-out text-[30px]">
+
+                {/* Social Icons - Desktop: Sidebar, Mobile: Horizontal Row */}
+                <div className="absolute bottom-[40px] md:top-[45%] md:right-[40px] md:translate-y-[-50%] flex flex-row md:flex-col gap-[30px] md:gap-[20px] social-icons z-20">
+                    <a href="https://www.linkedin.com/in/vani-rudra-/" target="_blank" className="text-white hover:scale-125 transition-transform duration-200 ease-in-out text-[28px] md:text-[30px]">
                         <Linkedin />
                     </a>
-                    <a href="mailto:vani.rudra2024@nst.rishihood.edu.in" target="_blank" className="text-white z-10 hover:scale-140 transition-transform duration-200 ease-in-out text-[30px]">
+                    <a href="mailto:vani.rudra2024@nst.rishihood.edu.in" target="_blank" className="text-white hover:scale-125 transition-transform duration-200 ease-in-out text-[28px] md:text-[30px]">
                         <Mail />
                     </a>
-                    <a href="https://github.com/vanosaur" target="_blank" className="text-white z-10 hover:scale-140 transition-transform duration-200 ease-in-out text-[30px]">
+                    <a href="https://github.com/vanosaur" target="_blank" className="text-white hover:scale-125 transition-transform duration-200 ease-in-out text-[28px] md:text-[30px]">
                         <Github />
                     </a>
                 </div>
@@ -148,67 +150,42 @@ export default function HomeSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: index * 0.1 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        className="flex items-center justify-between mt-[40px] max-w-7xl mx-auto project-container"
-                    >
-                        {index % 2 === 0 ? (
-                            <>
-                                {/* Left: Text */}
-                                <div className="max-w-[40%] text-left project-info">
-                                    <h2 className="text-[2rem] font-bold project-title">{project.title} →</h2>
-                                    <p className="text-[1.1rem] my-[10px] font-sans project-description">{project.description}</p>
-                                    <div className="mt-4 tags">
-                                        {project.tags.map(tag => (
-                                            <button key={tag} className="bg-[rgb(172,171,171)] text-black border-none py-[5px] px-[10px] text-[0.8rem] rounded-[20px] cursor-pointer mr-[10px]">
-                                                {tag}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-                                {/* Right: Video */}
-                                <div className="project-preview">
-                                    <a href={project.link} target="_blank">
-                                        <video
-                                            autoPlay
-                                            loop
-                                            muted
-                                            playsInline
-                                            className="w-[700px] h-[400px] rounded-[10%] object-cover shadow-[0_8px_35px_rgb(136,132,132)] hover:scale-105 transition-transform duration-500 ease-in-out videoss"
-                                        >
-                                            <source src={project.video} type="video/mp4" />
-                                        </video>
-                                    </a>
-                                </div>
-                            </>
-                        ) : (
-                            <>
-                                {/* Left: Video */}
-                                <div className="project-preview">
-                                    <a href={project.link} target="_blank">
-                                        <video
-                                            autoPlay
-                                            loop
-                                            muted
-                                            playsInline
-                                            className="w-[700px] h-[400px] rounded-[10%] object-cover shadow-[0_8px_35px_rgb(136,132,132)] hover:scale-105 transition-transform duration-500 ease-in-out videoss"
-                                        >
-                                            <source src={project.video} type="video/mp4" />
-                                        </video>
-                                    </a>
-                                </div>
-                                {/* Right: Text */}
-                                <div className="max-w-[40%] text-left project-info">
-                                    <h2 className="text-[2rem] font-bold project-title">← {project.title}</h2>
-                                    <p className="text-[1.1rem] my-[10px] font-sans project-description">{project.description}</p>
-                                    <div className="mt-4 tags">
-                                        {project.tags.map(tag => (
-                                            <button key={tag} className="bg-[rgb(172,171,171)] text-black border-none py-[5px] px-[10px] text-[0.8rem] rounded-[20px] cursor-pointer mr-[10px]">
-                                                {tag}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-                            </>
+                        className={clsx(
+                            "flex flex-col md:flex-row items-center justify-between mt-[60px] md:mt-[100px] max-w-7xl mx-auto gap-10 md:gap-20",
+                            index % 2 !== 0 && "md:flex-row-reverse"
                         )}
+                    >
+                        {/* Text Content */}
+                        <div className="w-full md:w-[40%] text-left project-info">
+                            <h2 className="text-[1.8rem] md:text-[2rem] font-bold project-title">
+                                {index % 2 === 0 ? `${project.title} →` : `← ${project.title}`}
+                            </h2>
+                            <p className="text-[1rem] md:text-[1.1rem] my-[10px] font-sans project-description leading-relaxed">
+                                {project.description}
+                            </p>
+                            <div className="mt-4 flex flex-wrap gap-2 tags">
+                                {project.tags.map(tag => (
+                                    <span key={tag} className="bg-white/10 text-white border border-white/10 py-[4px] px-[12px] text-[0.8rem] rounded-full">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Video / Preview */}
+                        <div className="w-full md:w-[60%] project-preview">
+                            <a href={project.link} target="_blank" className="block relative aspect-video w-full overflow-hidden rounded-[20px] md:rounded-[40px] shadow-[0_8px_35px_rgba(0,0,0,0.5)] hover:scale-[1.02] transition-transform duration-500">
+                                <video
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    className="w-full h-full object-cover"
+                                >
+                                    <source src={project.video} type="video/mp4" />
+                                </video>
+                            </a>
+                        </div>
                     </motion.div>
                 ))}
             </section>
