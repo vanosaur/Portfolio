@@ -92,9 +92,9 @@ export default function HomeSection() {
             </div>
 
             {/* Home Hero Content */}
-            <div className="relative min-h-screen flex items-center justify-center text-white overflow-hidden z-10 px-6 py-20">
-                <div className="flex flex-col md:flex-row items-center justify-center z-10 w-full max-w-6xl mx-auto gap-10 md:gap-0">
-                    <div className="flex-1 flex justify-center md:justify-end items-center md:pr-[30px]">
+            <div className="relative h-screen flex items-center justify-center text-left text-white overflow-hidden z-10">
+                <div className="flex flex-col md:flex-row items-center justify-center z-10 w-full content">
+                    <div className="flex-1 flex justify-center md:justify-end items-center md:pr-[30px] left">
                         <Image
                             src="/PHOTOS/about-me.jpg"
                             alt="Profile Picture"
@@ -103,16 +103,17 @@ export default function HomeSection() {
                             className="w-[180px] h-[180px] md:w-[220px] md:h-[220px] object-cover rounded-full shadow-[0_0_80px_rgba(255,255,255,0.5)] profile-pic"
                         />
                     </div>
-                    <div className="flex-[1.5] text-center md:text-left md:pl-[30px]">
-                        <h1 className="font-shadows font-bold text-[36px] md:text-[40px]">Vani Rudra</h1>
-                        <p className="font-montserrat text-[16px] md:text-[18px] mt-4 max-w-lg mx-auto md:mx-0">
-                            Born and raised in Pune, Maharashtra. I'm currently pursuing my B.Tech in Computer Science, honing my skills in <span className="font-bold font-montserrat" id="typing-text">{typingText}|</span>
+                    <div className="flex-[1.5] text-center md:text-left md:pl-[30px] right uppercase md:normal-case">
+                        <h1 className="font-shadows font-bold text-[40px]">Vani Rudra</h1>
+                        <br />
+                        <p className="font-montserrat text-[18px]">
+                            Born and raised in Pune, Maharashtra. I'm <br /> currently pursuing my B.Tech in Computer Science,<br /> honing my skills in <span className="font-bold font-montserrat" id="typing-text">{typingText}|</span>
                         </p>
                     </div>
                 </div>
 
-                {/* Social Icons - Desktop: Sidebar, Mobile: Horizontal Row */}
-                <div className="absolute bottom-[40px] md:top-[45%] md:right-[40px] md:translate-y-[-50%] flex flex-row md:flex-col gap-[30px] md:gap-[20px] social-icons z-20">
+                {/* Social Icons - Desktop: Fixed Sidebar, Mobile: Horizontal Row */}
+                <div className="absolute bottom-[40px] md:top-[45%] md:right-[40px] flex flex-row md:flex-col gap-[30px] md:gap-[20px] social-icons z-20">
                     <a href="https://www.linkedin.com/in/vani-rudra-/" target="_blank" className="text-white hover:scale-125 transition-transform duration-200 ease-in-out text-[28px] md:text-[30px]">
                         <Linkedin />
                     </a>
