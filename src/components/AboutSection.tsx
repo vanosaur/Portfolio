@@ -33,30 +33,112 @@ export default function AboutSection() {
             </section>
 
             {/* About Section */}
-            <section className="max-w-[800px] mx-auto my-[30px] text-[1.1rem] leading-[1.6] px-6 text-center font-montserrat">
-                <p>
-                    Hi👋 &nbsp; I'm <span className="font-bold italic">Vani Rudra</span>, an aspiring software developer with expertise spanning **Agentic AI systems** (like vision-based diagnostic assistants), **Fullstack applications** (including real-time media feeds and booking engines), **Frontend user interfaces**, **Backend resilience engines** (for high-performance traffic flow), and **Data Visualization & Analytics (DVA) dashboards** (translating environmental data into actionable insights). I enjoy building concurrent architectures, safety-grounded RAG pipelines, and intuitive user experiences. Let's innovate and build something amazing together!
+            <section className="max-w-[900px] mx-auto my-[40px] px-6 text-center font-montserrat">
+                <p className="text-[1.1rem] leading-[1.7] text-white/90 max-w-[800px] mx-auto mb-10">
+                    Hi👋 &nbsp; I'm <span className="font-bold text-[#a5b4fc]">Vani Rudra</span>, a computer science student and software developer passionate about building intelligent systems and responsive digital experiences. I enjoy designing concurrent architectures, safety-grounded AI pipelines, and intuitive user interfaces.
                 </p>
+
+                {/* Core Focus Area Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-left mt-8">
+                    
+                    {/* Agentic AI */}
+                    <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300">
+                        <h3 className="font-shadows text-[1.3rem] text-[#a5b4fc] font-bold mb-2">Agentic AI</h3>
+                        <p className="text-[0.9rem] text-gray-400 leading-[1.5]">
+                            Building autonomous agent loops, vision-based diagnostics, and safety-grounded retrieval-augmented generation (RAG) pipelines.
+                        </p>
+                    </div>
+
+                    {/* Fullstack Development */}
+                    <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300">
+                        <h3 className="font-shadows text-[1.3rem] text-[#a5b4fc] font-bold mb-2">Fullstack Dev</h3>
+                        <p className="text-[0.9rem] text-gray-400 leading-[1.5]">
+                            Designing complete end-to-end platforms featuring concurrent ride-dispatching systems and real-time social media pipelines.
+                        </p>
+                    </div>
+
+                    {/* Frontend Interfaces */}
+                    <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300">
+                        <h3 className="font-shadows text-[1.3rem] text-[#a5b4fc] font-bold mb-2">Frontend UI</h3>
+                        <p className="text-[0.9rem] text-gray-400 leading-[1.5]">
+                            Crafting pixel-perfect, highly responsive, and interactive interfaces with smooth micro-animations and clean layouts.
+                        </p>
+                    </div>
+
+                    {/* Backend Engineering */}
+                    <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300">
+                        <h3 className="font-shadows text-[1.3rem] text-[#a5b4fc] font-bold mb-2">Backend Systems</h3>
+                        <p className="text-[0.9rem] text-gray-400 leading-[1.5]">
+                            Developing resilient load balancers, client-side rate limiters, token buckets, and background worker queueing models.
+                        </p>
+                    </div>
+
+                    {/* DVA Dashboards */}
+                    <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 md:col-span-2 lg:col-span-1 lg:col-start-2">
+                        <h3 className="font-shadows text-[1.3rem] text-[#a5b4fc] font-bold mb-2">DVA Dashboards</h3>
+                        <p className="text-[0.9rem] text-gray-400 leading-[1.5]">
+                            Creating interactive environmental intelligence analytics and public data visualizations mapping air quality metrics.
+                        </p>
+                    </div>
+
+                </div>
             </section>
 
             <div className="w-[60%] h-[1px] bg-[#dad7d7] mx-auto my-[30px]"></div>
 
             {/* Skills Section */}
             <section className="max-w-[900px] mx-auto my-[50px] flex flex-col md:flex-row justify-start text-left gap-8 md:gap-[150px] px-6">
-                <h2 className="text-[1.2rem] font-bold uppercase w-[150px] shrink-0 text-white/50">Skills</h2>
-                <div className="flex-1 space-y-8">
+                <h2 className="text-[1.2rem] font-bold uppercase w-[150px] shrink-0 text-white/50 font-montserrat">Skills</h2>
+                <div className="flex-1 space-y-8 font-montserrat">
+                    
+                    {/* Languages */}
                     <div>
-                        <h3 className="text-[1.1rem] font-bold mb-2">Web Development</h3>
-                        <p className="text-[0.95rem] text-gray-400">HTML, CSS, React.js , Javascript, Next.js, Tailwind</p>
+                        <h3 className="text-[1.05rem] font-bold mb-3 text-white/90">Languages</h3>
+                        <div className="flex flex-wrap gap-2">
+                            {["Python", "Java", "JavaScript", "TypeScript", "HTML5", "CSS3", "SQL"].map((skill) => (
+                                <span key={skill} className="px-3.5 py-1.5 text-[0.8rem] rounded-full bg-white/[0.03] border border-white/10 text-gray-300 hover:border-white/25 hover:bg-white/[0.06] transition-all duration-300">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
                     </div>
+
+                    {/* Frameworks & Libraries */}
                     <div>
-                        <h3 className="text-[1.1rem] font-bold mb-2">Programming</h3>
-                        <p className="text-[0.95rem] text-gray-400">Python, Java</p>
+                        <h3 className="text-[1.05rem] font-bold mb-3 text-white/90">Frameworks & Libraries</h3>
+                        <div className="flex flex-wrap gap-2">
+                            {["React.js", "Next.js", "FastAPI", "Express", "Node.js", "LangGraph", "Streamlit", "TailwindCSS"].map((skill) => (
+                                <span key={skill} className="px-3.5 py-1.5 text-[0.8rem] rounded-full bg-white/[0.03] border border-white/10 text-gray-300 hover:border-white/25 hover:bg-white/[0.06] transition-all duration-300">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
                     </div>
+
+                    {/* Databases & Tools */}
                     <div>
-                        <h3 className="text-[1.1rem] font-bold mb-2">Creative Skills</h3>
-                        <p className="text-[0.95rem] text-gray-400">Sketching, Painting</p>
+                        <h3 className="text-[1.05rem] font-bold mb-3 text-white/90">Databases & Tools</h3>
+                        <div className="flex flex-wrap gap-2">
+                            {["MongoDB", "SQLite", "Prisma", "Cloudinary", "Tableau", "Git / GitHub", "Vercel", "Render"].map((skill) => (
+                                <span key={skill} className="px-3.5 py-1.5 text-[0.8rem] rounded-full bg-white/[0.03] border border-white/10 text-gray-300 hover:border-white/25 hover:bg-white/[0.06] transition-all duration-300">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
                     </div>
+
+                    {/* Creative & Soft Skills */}
+                    <div>
+                        <h3 className="text-[1.05rem] font-bold mb-3 text-white/90">Creative & System Focus</h3>
+                        <div className="flex flex-wrap gap-2">
+                            {["Sketching", "Painting", "UI/UX Prototyping", "SOLID Principles", "System Design"].map((skill) => (
+                                <span key={skill} className="px-3.5 py-1.5 text-[0.8rem] rounded-full bg-white/[0.03] border border-white/10 text-gray-300 hover:border-white/25 hover:bg-white/[0.06] transition-all duration-300">
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+
                 </div>
             </section>
 

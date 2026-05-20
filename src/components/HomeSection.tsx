@@ -65,7 +65,7 @@ export default function HomeSection() {
                 <div className="flex flex-col md:flex-row items-center justify-center z-10 w-full content">
                     <div className="flex-1 flex justify-center md:justify-end items-center md:pr-[30px] left">
                         <Image
-                            src="/PHOTOS/about-me.jpg"
+                            src="/PHOTOS/photo.jpeg"
                             alt="Profile Picture"
                             width={220}
                             height={220}

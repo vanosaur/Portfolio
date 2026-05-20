@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // List of sketches (Removed sketch10 as requested)
@@ -23,83 +23,131 @@ const containerVariants = {
     show: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.15,
+            staggerChildren: 0.1,
         },
     },
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.8, rotate: -5 },
+    hidden: { opacity: 0, x: 50, scale: 0.9, rotate: -3 },
     show: {
         opacity: 1,
-        y: 0,
+        x: 0,
         scale: 1,
         rotate: 0,
-        transition: { type: "spring", stiffness: 100, damping: 10 } as any
+        transition: { type: "spring", stiffness: 80, damping: 12 } as any
     },
 };
 
 export default function ArtSection() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+    const scrollLeft = () => {
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollBy({
+                left: -380,
+                behavior: "smooth",
+            });
+        }
+    };
+
+    const scrollRight = () => {
+        if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollBy({
+                left: 380,
+                behavior: "smooth",
+            });
+        }
+    };
 
     return (
-        <div className="w-full relative z-10 py-20 min-h-screen bg-black" id="art">
-            {/* Content Header */}
-            <div className="pt-[100px] px-6 sm:px-20 pb-[40px] text-center sm:text-left">
-                <motion.h1
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    viewport={{ once: true }}
-                    className="font-poppins text-[3.5rem] md:text-[6rem] font-black text-transparent [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:2px_white] tracking-tighter"
-                >
-                    Sketch Space
-                </motion.h1>
-                <motion.p
-                    initial={{ x: -50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    className="font-montserrat mt-4 text-gray-300 text-base md:text-lg max-w-2xl"
-                >
-                    A pencil, a blank page, and an idea—this is where it all begins.
-                    Raw, unfiltered, and straight from the imagination.
-                </motion.p>
+        <div className="w-full relative z-10 py-20 min-h-[70vh] bg-black" id="art">
+            {/* Content Header & Controls */}
+            <div className="pt-[100px] px-6 sm:px-20 pb-[40px] flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                <div>
+                    <motion.h1
+                        initial={{ x: -100, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        className="font-poppins text-[3.5rem] md:text-[6rem] font-black text-transparent [-webkit-text-stroke:1px_white] md:[-webkit-text-stroke:2px_white] tracking-tighter"
+                    >
+                        Sketch Space
+                    </motion.h1>
+                    <motion.p
+                        initial={{ x: -50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="font-montserrat mt-4 text-gray-300 text-base md:text-lg max-w-2xl"
+                    >
+                        A pencil, a blank page, and an idea—this is where it all begins.
+                        Raw, unfiltered, and straight from the imagination.
+                    </motion.p>
+                </div>
+
+                {/* Slider Control Buttons */}
+                <div className="flex gap-3 shrink-0 self-end md:self-auto">
+                    <button
+                        onClick={scrollLeft}
+                        className="p-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all text-white flex items-center justify-center cursor-pointer"
+                        aria-label="Scroll Left"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+                    <button
+                        onClick={scrollRight}
+                        className="p-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all text-white flex items-center justify-center cursor-pointer"
+                        aria-label="Scroll Right"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
+                </div>
             </div>
 
-            {/* Gallery */}
-            <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: "-100px" }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-6 sm:px-20 max-w-[1600px] mx-auto"
-            >
-                {sketches.map((sketch, index) => (
-                    <motion.div
-                        key={index}
-                        variants={itemVariants}
-                        whileHover={{
-                            scale: 1.05,
-                            rotate: index % 2 === 0 ? 2 : -2,
-                            zIndex: 10,
-                            transition: { duration: 0.3 }
-                        }}
-                        className="relative group w-full h-[350px] cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-white/5"
-                        onClick={() => setSelectedImage(sketch.src)}
-                    >
-                        <Image
-                            src={sketch.src}
-                            alt={sketch.alt}
-                            fill
-                            className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 opacity-80 group-hover:opacity-100 grayscale group-hover:grayscale-0"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <p className="text-white font-mono text-xl">#00{index + 1}</p>
-                        </div>
-                    </motion.div>
-                ))}
-            </motion.div>
+            {/* Gallery Carousel */}
+            <div className="relative w-full overflow-hidden">
+                <style>{`
+                    .no-scrollbar::-webkit-scrollbar {
+                        display: none;
+                    }
+                `}</style>
+                <motion.div
+                    ref={scrollContainerRef}
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="flex overflow-x-auto gap-6 px-6 sm:px-20 py-4 max-w-[1600px] mx-auto no-scrollbar snap-x snap-mandatory scroll-smooth"
+                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                >
+                    {sketches.map((sketch, index) => (
+                        <motion.div
+                            key={index}
+                            variants={itemVariants}
+                            whileHover={{
+                                scale: 1.03,
+                                rotate: index % 2 === 0 ? 1 : -1,
+                                zIndex: 10,
+                                transition: { duration: 0.3 }
+                            }}
+                            className="relative group shrink-0 w-[290px] sm:w-[330px] md:w-[360px] h-[360px] cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-white/5 snap-start"
+                            onClick={() => setSelectedImage(sketch.src)}
+                        >
+                            <Image
+                                src={sketch.src}
+                                alt={sketch.alt}
+                                fill
+                                className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 opacity-80 group-hover:opacity-100 grayscale group-hover:grayscale-0"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                <p className="text-white font-mono text-xl">#00{index + 1}</p>
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </div>
 
             {/* Lightbox */}
             <AnimatePresence>
@@ -136,6 +184,6 @@ export default function ArtSection() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </div >
+        </div>
     );
 }
