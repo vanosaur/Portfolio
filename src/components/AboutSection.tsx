@@ -35,11 +35,7 @@ export default function AboutSection() {
             {/* About Section */}
             <section className="max-w-[800px] mx-auto my-[30px] text-[1.1rem] leading-[1.6] px-6 text-center font-montserrat">
                 <p>
-                    Hi👋 &nbsp; I'm <span className="font-bold italic">Vani Rudra</span>, an aspiring software developer with a passion for
-                    web development, Progamming, and problem-solving. I enjoy creating intuitive and visually appealing
-                    digital experiences while continuously expanding my skill set. Currently, I'm exploring various technologies
-                    and working on projects that enhance both my technical and creative abilities. Let's innovate and build
-                    something amazing together!
+                    Hi👋 &nbsp; I'm <span className="font-bold italic">Vani Rudra</span>, an aspiring software developer with expertise spanning **Agentic AI systems** (like vision-based diagnostic assistants), **Fullstack applications** (including real-time media feeds and booking engines), **Frontend user interfaces**, **Backend resilience engines** (for high-performance traffic flow), and **Data Visualization & Analytics (DVA) dashboards** (translating environmental data into actionable insights). I enjoy building concurrent architectures, safety-grounded RAG pipelines, and intuitive user experiences. Let's innovate and build something amazing together!
                 </p>
             </section>
 

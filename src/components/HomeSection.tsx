@@ -4,42 +4,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Linkedin, Mail, Github } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { clsx } from "clsx";
-
-const projects = [
-    {
-        title: "Recipe Finder",
-        description: "Build a Recipe Finder web application that allows users to search for recipes based on ingredients and cuisine types.",
-        tags: ["HTML", "CSS", "Javascript"],
-        video: "/videos/recipe.mp4",
-        link: "https://vanosaur.github.io/Recipe_Finder_project/",
-    },
-    {
-        title: "Youtube Clone",
-        description: "Designed a visually appealing and fully responsive layout resembling YouTube’s interface.",
-        tags: ["HTML", "CSS"],
-        video: "/videos/youtube.mp4",
-        link: "https://vanosaur.github.io/Youtube_clone/",
-    },
-    {
-        title: "Calculator",
-        description: "Developed a user-friendly calculator supporting basic arithmetic operations (addition, subtraction, multiplication, division).",
-        tags: ["HTML", "CSS", "Javascript"],
-        video: "/videos/calc.mp4",
-        link: "https://vanosaur.github.io/Calculator_project/",
-    },
-    {
-        title: "Capstone Project",
-        description: "Developed a fully responsive interface with a structured layout and engaging UI. Used Flex for seamless adaptability across devices. Used hover effects to make it visually attractive.",
-        tags: ["HTML", "CSS"],
-        video: "/videos/capstone.mp4",
-        link: "https://vanosaur.github.io/Capstone_project/",
-    },
-];
+import ProjectTV from "./ProjectTV";
 
 export default function HomeSection() {
     const [typingText, setTypingText] = useState("");
-    const skills = ["Web Development", "UI/UX Design", "Problem Solving"];
+    const skills = ["Agentic AI", "Fullstack Applications", "Frontend Interfaces", "Backend Engineering", "DVA Dashboards"];
 
     useEffect(() => {
         let skillIndex = 0;
@@ -128,67 +97,13 @@ export default function HomeSection() {
 
             {/* Project section with Blended Background */}
             <section
-                className="relative text-white p-[50px] text-center"
+                className="relative text-white py-[80px] px-4 min-h-screen flex items-center justify-center"
                 id="projects"
             >
                 {/* Legacy Radial Gradient (Applied as overlay to blend) */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,77,109,0.10),rgba(77,109,255,0.08))] opacity-80 -z-10" />
 
-                <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="text-center mt-[40px] mb-[90px] font-poppins font-black text-[4rem] sm:text-[6rem] text-transparent [-webkit-text-stroke:2px_white] tracking-tighter title"
-                >
-                    Featured Projects
-                </motion.h1>
-
-                {projects.map((project, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        className={clsx(
-                            "flex flex-col md:flex-row items-center justify-between mt-[60px] md:mt-[100px] max-w-7xl mx-auto gap-10 md:gap-20",
-                            index % 2 !== 0 && "md:flex-row-reverse"
-                        )}
-                    >
-                        {/* Text Content */}
-                        <div className="w-full md:w-[40%] text-left project-info">
-                            <h2 className="text-[1.8rem] md:text-[2rem] font-bold project-title">
-                                {index % 2 === 0 ? `${project.title} →` : `← ${project.title}`}
-                            </h2>
-                            <p className="text-[1rem] md:text-[1.1rem] my-[10px] font-sans project-description leading-relaxed">
-                                {project.description}
-                            </p>
-                            <div className="mt-4 flex flex-wrap gap-2 tags">
-                                {project.tags.map(tag => (
-                                    <span key={tag} className="bg-white/10 text-white border border-white/10 py-[4px] px-[12px] text-[0.8rem] rounded-full">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Video / Preview */}
-                        <div className="w-full md:w-[60%] project-preview">
-                            <a href={project.link} target="_blank" className="block relative aspect-video w-full overflow-hidden rounded-[20px] md:rounded-[40px] shadow-[0_8px_35px_rgba(0,0,0,0.5)] hover:scale-[1.02] transition-transform duration-500">
-                                <video
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    className="w-full h-full object-cover"
-                                >
-                                    <source src={project.video} type="video/mp4" />
-                                </video>
-                            </a>
-                        </div>
-                    </motion.div>
-                ))}
+                <ProjectTV />
             </section>
 
 
