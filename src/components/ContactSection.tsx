@@ -37,11 +37,11 @@ export default function ContactSection() {
                     </div>
 
                     <div className="flex flex-col gap-4 text-lg">
-                        <a href="mailto:vani.rudra2024@nst.rishihood.edu.in" className="flex items-center gap-4 hover:text-[#fae900] transition-colors group">
+                        <a href="mailto:vanirudra0914@gmail.com" className="flex items-center gap-4 hover:text-[#fae900] transition-colors group">
                             <span className="p-3 bg-white/10 rounded-full group-hover:bg-white/20 transition-colors">
                                 <Mail size={24} />
                             </span>
-                            vani.rudra2024@nst.rishihood.edu.in
+                            vanirudra0914@gmail.com
                         </a>
                         <a href="https://www.linkedin.com/in/vani-rudra-/" target="_blank" className="flex items-center gap-4 hover:text-[#fae900] transition-colors group">
                             <span className="p-3 bg-white/10 rounded-full group-hover:bg-white/20 transition-colors">
@@ -67,7 +67,7 @@ export default function ContactSection() {
                     viewport={{ once: true }}
                     className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl"
                 >
-                    <form action="https://formspree.io/f/xeogenee" method="POST" className="space-y-6">
+                    <form action="mailto:vanirudra0914@gmail.com" method="POST" encType="text/plain" className="space-y-6">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Name</label>
                             <input

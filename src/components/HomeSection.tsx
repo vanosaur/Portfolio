@@ -50,7 +50,7 @@ export default function HomeSection() {
         <div className="w-full relative">
             {/* Fixed Background Video (Visible throughout HomeSection scrolling) */}
             <div className="fixed top-0 left-0 w-full h-full z-0">
-                <video autoPlay muted loop className="w-full h-full object-cover opacity-100">
+                <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover opacity-100">
                     <source src="/bg-video.mp4" type="video/mp4" />
                 </video>
                 {/* Overlay to darken video on scroll */}
@@ -86,7 +86,7 @@ export default function HomeSection() {
                     <a href="https://www.linkedin.com/in/vani-rudra-/" target="_blank" className="text-white hover:scale-125 transition-transform duration-200 ease-in-out text-[28px] md:text-[30px]">
                         <Linkedin />
                     </a>
-                    <a href="mailto:vani.rudra2024@nst.rishihood.edu.in" target="_blank" className="text-white hover:scale-125 transition-transform duration-200 ease-in-out text-[28px] md:text-[30px]">
+                    <a href="mailto:vanirudra0914@gmail.com" target="_blank" className="text-white hover:scale-125 transition-transform duration-200 ease-in-out text-[28px] md:text-[30px]">
                         <Mail />
                     </a>
                     <a href="https://github.com/vanosaur" target="_blank" className="text-white hover:scale-125 transition-transform duration-200 ease-in-out text-[28px] md:text-[30px]">
