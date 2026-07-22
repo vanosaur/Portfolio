@@ -95,7 +95,7 @@ export default function AboutSection() {
                     <div>
                         <h3 className="text-[1.05rem] font-bold mb-3 text-white/90">Languages</h3>
                         <div className="flex flex-wrap gap-2">
-                            {["Python", "Java", "JavaScript", "TypeScript", "HTML5", "CSS3", "SQL"].map((skill) => (
+                            {["Python", "JavaScript", "TypeScript", "HTML5", "CSS3", "SQL"].map((skill) => (
                                 <span key={skill} className="px-3.5 py-1.5 text-[0.8rem] rounded-full bg-white/[0.03] border border-white/10 text-gray-300 hover:border-white/25 hover:bg-white/[0.06] transition-all duration-300">
                                     {skill}
                                 </span>

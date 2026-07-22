@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Montserrat, Pacifico, Poppins, Shadows_Into_Light, Chakra_Petch, Stardos_Stencil } from "next/font/google";
 import "./globals.css";
 
-
 // Legacy Fonts
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
@@ -17,6 +16,8 @@ export const metadata: Metadata = {
   description: "A showcase of my work and art",
 };
 
+import PageWrapper from "./components/PageWrapper";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,10 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${inter.variable} ${montserrat.variable} ${pacifico.variable} ${poppins.variable} ${shadows.variable} ${chakra.variable} ${stardos.variable} antialiased`}
-      >
-        {children}
+      <body className={`${inter.variable} ${montserrat.variable} ${pacifico.variable} ${poppins.variable} ${shadows.variable} ${chakra.variable} ${stardos.variable} antialiased`}>
+        <PageWrapper>
+          {children}
+        </PageWrapper>
       </body>
     </html>
   );
